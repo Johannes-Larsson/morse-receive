@@ -1,0 +1,33 @@
+<head>
+  <title>Morse receive trainer</title>
+  <link rel='stylesheet' href='index.css'/>
+</head>
+
+<body>
+  <div id='content'>
+    <p id='scorep'>Score: <span id='score'>0/0</span></p>
+    <form action='#' onsubmit='formSubmit(); return false;'>
+      <input id='wordinput' type='text' name='answer' placeholder='Answer'/>
+    </form>
+
+    <div id='info'>
+      <div class='rightwrong' id='correct'><p>Correct!</p></div>
+      <div class='rightwrong' id='wrong'><p>Wrong!</p></div>
+      <p id='showword'>The word was <span id='correctans'></span></p>
+    </div>
+
+    <div id='speedselect'>
+      <select id='speed'>
+        <option value='7wpm'>7 WPM</option>
+        <option value='10wpm' selected>10 WPM</option>
+        <option value='15wpm'>15 WPM</option>
+        <option value='20wpm'>20 WPM</option>
+        <option value='25wpm'>26 WPM</option>
+      </select>
+      <button id='speedApply' onClick='applySpeed()'>Apply</button>
+    </div>
+  </div>
+</body>
+
+<script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
+<script src='index.js'></script>
