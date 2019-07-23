@@ -10,6 +10,7 @@ $('#correct').hide();
 $('#wrong').hide();
 $('#showword').hide();
 $('#correctans').hide();
+$('#content').hide();
 
 fetch('words/words.json')
 .then(function(response) {
@@ -17,8 +18,6 @@ fetch('words/words.json')
 })
 .then(function(jsonResponse) {
   words = jsonResponse;
-
-  newWord();
 });
 
 function newWord() {
@@ -63,4 +62,10 @@ function applySpeed() {
   $('#score').html(`${ncorr}/${n}`);
   speed = $('#speed').val();
   setTimeout(newWord, 1000);
+}
+
+function start() {
+  $('#start').hide();
+  $('#content').show();
+  newWord();
 }

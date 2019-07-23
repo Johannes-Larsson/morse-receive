@@ -37,3 +37,12 @@
   position: absolute;
   bottom: 5em;
 }
+
+#start {
+  text-align: center;
+  font-family: sans;
+  font-weight: bold;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 45vh;
+}

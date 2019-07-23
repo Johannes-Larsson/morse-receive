@@ -1,9 +1,13 @@
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Morse receive trainer</title>
   <link rel='stylesheet' href='index.css'/>
 </head>
 
 <body>
+  <div onclick='start()' id='start'>
+    <p>Click anywhere to start</p>
+  </div>
   <div id='content'>
     <p id='scorep'>Score: <span id='score'>0/0</span></p>
     <form action='#' onsubmit='formSubmit(); return false;'>
@@ -25,6 +29,9 @@
         <option value='25wpm'>26 WPM</option>
       </select>
       <button id='speedApply' onClick='applySpeed()'>Apply</button>
+      <br>
+      <button id='pause' onClick='audio.pause();'>Pause</button>
+      <button id='play' onClick='audio.play();'>Play</button>
     </div>
   </div>
 </body>
