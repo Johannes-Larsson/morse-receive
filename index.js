@@ -69,3 +69,13 @@ function start() {
   $('#content').show();
   newWord();
 }
+
+function playAudio() {
+	if (audio.paused) {
+		audio.play()
+	}
+}
+
+function pauseAudio() {
+	audio.pause()
+}
