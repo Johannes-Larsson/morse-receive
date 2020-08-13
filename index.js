@@ -40,7 +40,7 @@ function formSubmit() {
 
   let ans = $('#wordinput').val();
   n += 1;
-  if (ans == word) {
+  if (ans.toLowerCase() == word.toLowerCase()) {
     $('#correct').show();
     ncorr += 1;
   } else {
