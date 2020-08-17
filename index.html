@@ -2,6 +2,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Morse receive trainer</title>
   <link rel='stylesheet' href='index.css'/>
+  <link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css">
 </head>
 
 <body>
@@ -10,6 +11,12 @@
   </div>
   <div id='content'>
     <p id='scorep'>Score: <span id='score'>0/0</span></p>
+
+    <div id='playpause'>
+        <button id='pause' onClick='pauseAudio()'>Pause</button>
+        <button id='play' onClick='playAudio()'>Play</button>
+    </div>
+
     <form action='#' onsubmit='formSubmit(); return false;'>
       <input id='wordinput' type='text' name='answer' placeholder='Answer'/>
     </form>
@@ -20,18 +27,20 @@
       <p id='showword'>The word was <span id='correctans'></span></p>
     </div>
 
-    <div id='speedselect'>
-      <select id='speed'>
-        <option value='7wpm'>7 WPM</option>
-        <option value='10wpm' selected>10 WPM</option>
-        <option value='15wpm'>15 WPM</option>
-        <option value='20wpm'>20 WPM</option>
-        <option value='25wpm'>26 WPM</option>
-      </select>
-      <button id='speedApply' onClick='applySpeed()'>Apply</button>
-      <br>
-      <button id='pause' onClick='pauseAudio()'>Pause</button>
-      <button id='play' onClick='playAudio()'>Play</button>
+
+    <div id='settings' class='collapse'>
+      <input type='checkbox' id='collapse-settings'>
+      <label for='collapse-settings' hidden='true'>Options</label>
+      <div id='speedselect'>
+        <select id='speed'>
+          <option value='7wpm'>7 WPM</option>
+          <option value='10wpm' selected>10 WPM</option>
+          <option value='15wpm'>15 WPM</option>
+          <option value='20wpm'>20 WPM</option>
+          <option value='25wpm'>26 WPM</option>
+        </select>
+        <button id='speedApply' onClick='applySpeed()'>Apply</button>
+      </div>
     </div>
   </div>
 </body>
