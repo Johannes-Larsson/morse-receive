@@ -3,30 +3,26 @@
   text-align: center;
 }
 
-.rightwrong {
-  font-weight: bold;
-}
-
 .rightwrong p {
   margin: auto;
 	padding: 2em;
 }
 
 #correct {
-  background-color: green;
+  background-color: #22f022;
 }
 
 #wrong {
-  background-color: red;
+  background-color: #f02222;
 }
 
 #start {
   text-align: center;
   font-family: sans;
-  font-weight: bold;
   width: 100vw;
   height: 100vh;
   padding-top: 45vh;
+	background-color: #e0e0e0;
 }
 
 #settings {
