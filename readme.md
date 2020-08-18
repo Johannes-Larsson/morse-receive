@@ -8,5 +8,6 @@ The words are from a list of the 1000 most common english words.
 The audio files are generated using ebook2cw, for example like this:  
 `mkdir 7wpm; while read -r line; do echo $line | ebook2cw -o "7wpm/$line"  -w 7; done < words.txt;`
 
-It can be served completely static by for example nginx, and there's also a very basic node server which does the same.
-You can do `node server.js` to start that.
+The static directory contains all one might need, so it is sufficient to serve that with for example nginx.
+A golang backend server with more features is also in progress, see server.go.
+Do `go run server.go` to start that.
