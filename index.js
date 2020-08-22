@@ -24,7 +24,7 @@ fetch('words/words.json')
 });
 
 function newWord() {
-	if (!playing) return;
+  if (!playing) return;
 
   word = words[Math.floor(Math.random()*words.length)];
   playWord(word);
@@ -41,7 +41,7 @@ function playWord(word) {
 }
 
 function formSubmit() {
-	completedWord = true;
+  completedWord = true;
   audio.pause();
 
   let ans = $('#wordinput').val();
@@ -77,24 +77,24 @@ function start() {
 }
 
 function playAgain() {
-	if (audio.paused && !completedWord) {
-		audio.play()
-	}
+  if (audio.paused && !completedWord) {
+    audio.play()
+  }
 }
 
 function pause() {
-	playing = false;
-	audio.pause()
-	$('#pause').hide()
-	$('#resume').show()
+  playing = false;
+  audio.pause()
+  $('#pause').hide()
+  $('#resume').show()
 }
 
 function resume() {
-	playing = true;
-	if (completedWord) newWord();
+  playing = true;
+  if (completedWord) newWord();
 
-	audio.currentTime = 0;
-	audio.play();
-	$('#resume').hide()
-	$('#pause').show()
+  audio.currentTime = 0;
+  audio.play();
+  $('#resume').hide()
+  $('#pause').show()
 }
