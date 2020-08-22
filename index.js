@@ -6,6 +6,9 @@ let ncorr = 0;
 let n = 0;
 let speed = '10wpm';
 
+let playing = true;
+let completedWord = false;
+
 $('#correct').hide();
 $('#wrong').hide();
 $('#showword').hide();
@@ -21,6 +24,8 @@ fetch('words/words.json')
 });
 
 function newWord() {
+	if (!playing) return;
+
   word = words[Math.floor(Math.random()*words.length)];
   playWord(word);
   $('#correct').hide();
@@ -36,6 +41,7 @@ function playWord(word) {
 }
 
 function formSubmit() {
+	completedWord = true;
   audio.pause();
 
   let ans = $('#wordinput').val();
@@ -70,12 +76,25 @@ function start() {
   newWord();
 }
 
-function playAudio() {
-	if (audio.paused) {
+function playAgain() {
+	if (audio.paused && !completedWord) {
 		audio.play()
 	}
 }
 
-function pauseAudio() {
+function pause() {
+	playing = false;
 	audio.pause()
+	$('#pause').hide()
+	$('#resume').show()
+}
+
+function resume() {
+	playing = true;
+	if (completedWord) newWord();
+
+	audio.currentTime = 0;
+	audio.play();
+	$('#resume').hide()
+	$('#pause').show()
 }

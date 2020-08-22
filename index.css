@@ -29,3 +29,8 @@
   position: absolute;
   bottom: 1em;
 }
+
+#resume {
+	display: none;
+}
+
