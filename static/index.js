@@ -23,6 +23,13 @@ fetch('words/words.json')
   words = jsonResponse;
 });
 
+fetch('api/version')
+.then(function(response) {
+  response.text().then(function(text) {
+    $('#version-span').html(text);
+  });
+});
+
 function newWord() {
   if (!playing) return;
 
